@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+}
+
+#content_wrapper {    
+    text-align: center;
+    width: 800px;
+    top: 30px;
+	
+	margin-right: auto;
+	margin-left: auto;
+	left: 0;
+	right: 0;
+}
+
+#projects {   
+    float: left; 
+    width: 200px;
+    background-color: #6EABBD;
+    background-color: linear-gradient(#648880, #293f50);
+}
+
+#tasks {
+    margin-left: 200px; 
+    
+}
+   

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">    
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="content_wrapper">
+        <div id="projects">
+            <ul>
+                <li v-for="project in repository_projects">
+                    {{ project.name }}                    
+                </li>
+                <li>
+                    <!--созддание проекта-->
+                    <tr>
+                        <td></td>
+                        <td><input type="submit"></td>
+                    </tr>
+                </li>                             
+            </ul>
+        </div>
+
+        <div id="tasks">
+            <div id="projects_menu"><input type="submit" value="редактирование">
+                <input type="submit" value="удаление">
+                <input type="submit" value="добавить задачу">
+                <input type="submit" value="считать выполненым">
+            </div>
+            <ul>                
+                <li v-for="tasks in repository_tasks">
+                    {{ tasks.name }} Проект№:{{tasks.id_project}}
+                </li>                              
+            </ul>
+        </div>
+    </div>  
+    <script src="./working_method.js"></script>
+    <script src="./index.js"></script>  
+</body>
+</html>
