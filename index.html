@@ -10,30 +10,38 @@
     <div id="content_wrapper">
         <div id="projects">
             <ul>
-                <li v-for="project in repository_projects">
+                <li v-for="project in repository_projects" v-bind:value="project.id"
+                @click="id_selected_project = $event.target.value" > <!--значение переменной по клику-->
                     {{ project.name }}                    
                 </li>
+                {{ id_selected_project }}               
                 <li>
                     <!--созддание проекта-->
                     <tr>
-                        <td></td>
-                        <td><input type="submit"></td>
+                        <td><input type="text" placeholder="Название проекта"></td>
+                        <td><input type="submit" value="начать"></td>
                     </tr>
                 </li>                             
             </ul>
         </div>
 
         <div id="tasks">
+            {{ id_selected_project }}
+            
             <div id="projects_menu"><input type="submit" value="редактирование">
                 <input type="submit" value="удаление">
                 <input type="submit" value="добавить задачу">
                 <input type="submit" value="считать выполненым">
             </div>
-            <ul>                
-                <li v-for="tasks in repository_tasks">
-                    {{ tasks.name }} Проект№:{{tasks.id_project}}
-                </li>                              
-            </ul>
+            <table class="tasks_table">                
+                <tr v-for="tasks in tasks_selected_project"><!--условие цикла по переменной-->
+                    <td>{{ tasks.name }}</td>
+                    <td>Проект№:</td>
+                    <td>{{tasks.id_project}}</td> 
+                    <td>удалить</td> 
+                    <td>Выполнено</td> 
+                </tr>                              
+            </table>
         </div>
     </div>  
     <script src="./working_method.js"></script>

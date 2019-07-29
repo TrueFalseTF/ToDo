@@ -24,4 +24,11 @@ ul {
     margin-left: 200px; 
     
 }
+
+.tasks_table {
+    margin-right: auto;
+	margin-left: auto;
+	left: 0;
+	right: 0;
+}
    

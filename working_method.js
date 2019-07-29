@@ -21,4 +21,19 @@ var prototype = {
     }
 }
 
+var working = {
+    task_selection: function(repository_tasks, id_selected_project) {console.log("Вызов task_selection");
+    var tasks_selected_project = new Array();
+    repository_tasks.forEach(task => {
+   
+        if(task.id_project == id_selected_project) {            
+            tasks_selected_project.push(task);
+            console.log(tasks_selected_project);
+        }
+        
+        return tasks_selected_project;
+    });
+}
+}
+
 ///export {prototype};
